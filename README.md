@@ -3,6 +3,9 @@ ocr-guess
 
 對圖片同時做中英文OCR，並猜測哪行結果較為正確
 
+概念起源於[阿美語字典OCR](https://github.com/miaoski/amis-data)及[政治獻金數位化．人工 OCR](https://github.com/ctiml/campaign-finance.g0v.ctiml.tw)。
+在這兩個專案中，使用者需自行輸入在圖片中看到的文字，然而輸入文字相當麻煩，所以雖然效果有限，我們仍然可以嘗試使用程式先作初步的OCR。
+
 主要用來辨識只含有單行文字的圖片。例如：
 
 ![sample.jpg](sample.jpg)
@@ -22,14 +25,17 @@ ocr-guess
 此script可以單獨執行，也能做函式庫使用
 
 函式庫：
+
     import ocr_guess
     
     print ocr_guess.get_ocr_guess('sample.jpg',True)
 
 單獨執行：
+
     ./ocr_guess.py -p -t -v *.jpg > result.json
 
 可得到類似這樣的結果：
+
     [
         {
             "cht": "啷二】 gaWg蠶W 一【o ea【 SWee! p0【a【oeS or le【tuCe 。【 guaVa r矗W 生吃蕃薯",
